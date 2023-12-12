@@ -4,7 +4,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: 30 0,8,10,12,19,20-23 * * *
-      
 
 jobs:
   test:
@@ -17,5 +16,4 @@ jobs:
         run: npm install -g newman
       - name: Run tests
         run: newman run BookCart_automation.postman_collection.json -d books.json
-       
       
