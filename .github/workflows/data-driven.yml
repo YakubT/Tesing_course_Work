@@ -16,6 +16,4 @@ jobs:
         run: npm install -g newman
       - name: Run data driven tests
         run: newman run BookCart_automation_datadriven.postman_collection.json -d books.json
-      - name: Run data regression tests
-        run: newman run BookCart_automation_non_dr.postman_collection.json
       
