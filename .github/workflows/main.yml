@@ -1,0 +1,19 @@
+name: Regression Run
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: 30 * * * *
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          node-version: 16
+      - name: Install Newman
+        run: npm install -g newman
+      - name: Run data regression tests
+        run: newman run BookCart_automation_non_dr.postman_collection.json
+
