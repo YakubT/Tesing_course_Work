@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "d0b91920-87b2-444b-851c-094e3baa70fa",
+		"name": "BookCart_automation_datadriven",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23916958"
+	},
+	"item": [
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "positiveTesting",
+					"item": [
+						{
+							"name": "Get specific book",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"book3: test corectness of book data\",()=> {\r",
+											"    pm.expect(pm.response.json()).to.eql({\r",
+											"    \"bookId\": data.bookId,\r",
+											"    \"title\": data.title,\r",
+											"    \"author\": data.author,\r",
+											"    \"category\": data.category,\r",
+											"    \"price\": data.price,\r",
+											"    \"coverFileName\": data.coverFileName\r",
+											"    });\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/{{book_api}}//{{bookId}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{book_api}}",
+										"",
+										"{{bookId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get the random five books from the category of book whose BookId is supplied",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"test corectness of similar book data\",()=> {\r",
+											"    const category = data.category;\r",
+											"    pm.expect(pm.response.json().map(el=>el.category)).to.eql([category,category,category,category,category],`Expected category:${category}, bookId=${data.bookId} `+pm.response.json());\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/{{book_api}}/GetSimilarBooks/{{bookId}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{book_api}}",
+										"GetSimilarBooks",
+										"{{bookId}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

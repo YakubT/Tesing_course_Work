@@ -1,0 +1,1806 @@
+{
+	"info": {
+		"_postman_id": "09b9beb1-de65-4f75-aa85-bfa2b01ce217",
+		"name": "BookCart_automation_non_dr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23916958"
+	},
+	"item": [
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "positiveTesting",
+					"item": [
+						{
+							"name": "Get all books",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"book1: test successful status when get books\", ()=> {\r",
+											"    pm.response.to.have.status(200);\r",
+											"})\r",
+											"\r",
+											"pm.test(\"book5: check correctness of set of books\",()=> {\r",
+											"    const resObjArr = pm.response.json();\r",
+											"    expectedResult =  [{\r",
+											"        \"bookId\": 2,\r",
+											"        \"title\": \"HP2\",\r",
+											"        \"author\": \"JKR\",\r",
+											"        \"category\": \"Mystery\",\r",
+											"        \"price\": 235.00,\r",
+											"        \"coverFileName\": \"9d8f4978-0ef8-42d0-873a-4eb583439237HP2.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 3,\r",
+											"        \"title\": \"HP3\",\r",
+											"        \"author\": \"JKR\",\r",
+											"        \"category\": \"Romance\",\r",
+											"        \"price\": 213.00,\r",
+											"        \"coverFileName\": \"c63ade52-3f90-41fa-980a-1136b6ad2128HP3.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 4,\r",
+											"        \"title\": \"HP4\",\r",
+											"        \"author\": \"JKR\",\r",
+											"        \"category\": \"Fiction\",\r",
+											"        \"price\": 321.00,\r",
+											"        \"coverFileName\": \"9d31690d-3b1d-4faa-a1d2-3a680a935008HP4.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 5,\r",
+											"        \"title\": \"HP5\",\r",
+											"        \"author\": \"JKR\",\r",
+											"        \"category\": \"Mystery\",\r",
+											"        \"price\": 432.00,\r",
+											"        \"coverFileName\": \"8f5f8b64-794c-4dbb-b369-6cc9cc762ce0HP5.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 6,\r",
+											"        \"title\": \"HP6\",\r",
+											"        \"author\": \"JKR\",\r",
+											"        \"category\": \"Fantasy\",\r",
+											"        \"price\": 433.00,\r",
+											"        \"coverFileName\": \"cff3d5ee-71f3-43d8-8625-33abcd48659eHP6.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 7,\r",
+											"        \"title\": \"HP7\",\r",
+											"        \"author\": \"JKR\",\r",
+											"        \"category\": \"Fiction\",\r",
+											"        \"price\": 325.00,\r",
+											"        \"coverFileName\": \"4ec2ffb6-b21a-43ce-bf90-04d56ec72644HP7.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 15,\r",
+											"        \"title\": \"HP1\",\r",
+											"        \"author\": \"JKR\",\r",
+											"        \"category\": \"Fantasy\",\r",
+											"        \"price\": 342.00,\r",
+											"        \"coverFileName\": \"f73b4e21-28fe-4d3f-895b-d8a553b7ba6fHP1.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 18,\r",
+											"        \"title\": \"Rot & Ruin\",\r",
+											"        \"author\": \"Jonathan Maberry \",\r",
+											"        \"category\": \"Biography\",\r",
+											"        \"price\": 123.00,\r",
+											"        \"coverFileName\": \"eb592aa9-831e-47ed-aea8-fa79d7d316097157310.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 21,\r",
+											"        \"title\": \"Slayer\",\r",
+											"        \"author\": \" Kiersten White\",\r",
+											"        \"category\": \"Mystery\",\r",
+											"        \"price\": 1234.00,\r",
+											"        \"coverFileName\": \"6d91b7b0-b8d1-41ad-a0ef-65e2324fc1b3Slayer.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 28,\r",
+											"        \"title\": \"Çürük\",\r",
+											"        \"author\": \"Jonathan \",\r",
+											"        \"category\": \"Fiction\",\r",
+											"        \"price\": 1211.00,\r",
+											"        \"coverFileName\": \"cbf832c1-cd01-47b3-93fa-62995a7dca1118799023.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 29,\r",
+											"        \"title\": \"Roomies\",\r",
+											"        \"author\": \"Christina Lauren \",\r",
+											"        \"category\": \"Biography\",\r",
+											"        \"price\": 334.00,\r",
+											"        \"coverFileName\": \"267e7cea-d66e-4e00-a220-c0ee7e70fdaf33322.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 30,\r",
+											"        \"title\": \"A Princess in Theory\",\r",
+											"        \"author\": \"Alyssa Cole\",\r",
+											"        \"category\": \"Fiction\",\r",
+											"        \"price\": 545.00,\r",
+											"        \"coverFileName\": \"42314d38-bbc8-40ed-b890-612ea45791d735271238.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 31,\r",
+											"        \"title\": \"Robbie\",\r",
+											"        \"author\": \"Ella Frank\",\r",
+											"        \"category\": \"Fiction\",\r",
+											"        \"price\": 345.00,\r",
+											"        \"coverFileName\": \"2141f7a1-e6b8-4d88-91e3-0d3a141117be39086215.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 32,\r",
+											"        \"title\": \"Wicked and the Wallflower\",\r",
+											"        \"author\": \"Sarah MacLean\",\r",
+											"        \"category\": \"Fiction\",\r",
+											"        \"price\": 512.00,\r",
+											"        \"coverFileName\": \"75f8ca57-6b59-43aa-ae05-f51a7429dd5836301036.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 33,\r",
+											"        \"title\": \"Dr. Strange Beard\",\r",
+											"        \"author\": \"Penny Reid\",\r",
+											"        \"category\": \"Biography\",\r",
+											"        \"price\": 312.00,\r",
+											"        \"coverFileName\": \"9749b4d2-d8be-4e9b-b7ea-d437a3a9bf0e136395874.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 34,\r",
+											"        \"title\": \"The Simple Wild\",\r",
+											"        \"author\": \"K.A. Tucker\",\r",
+											"        \"category\": \"Biography\",\r",
+											"        \"price\": 111.00,\r",
+											"        \"coverFileName\": \"b868eb26-f12c-4dcf-ba19-03e0d6cafb8d36373564.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 35,\r",
+											"        \"title\": \"Marriage of Inconvenience\",\r",
+											"        \"author\": \"Penny Reid\",\r",
+											"        \"category\": \"Fantasy\",\r",
+											"        \"price\": 345.00,\r",
+											"        \"coverFileName\": \"8d3a0352-270b-405d-b8bc-ee0f59179cbf36395764.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 36,\r",
+											"        \"title\": \"The Hookup\",\r",
+											"        \"author\": \"Kristen Ashley \",\r",
+											"        \"category\": \"Romance\",\r",
+											"        \"price\": 434.00,\r",
+											"        \"coverFileName\": \"dc785e9f-a753-42f7-a87e-fda5e97ce67bqq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 37,\r",
+											"        \"title\": \"Birthday Girl\",\r",
+											"        \"author\": \"Penelope Douglas \",\r",
+											"        \"category\": \"Romance\",\r",
+											"        \"price\": 441.00,\r",
+											"        \"coverFileName\": \"7616f5e9-a42a-4268-8ff0-4f77547dcc9crr.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 38,\r",
+											"        \"title\": \"Red Rising\",\r",
+											"        \"author\": \"Pierce Brown\",\r",
+											"        \"category\": \"Romance\",\r",
+											"        \"price\": 512.00,\r",
+											"        \"coverFileName\": \"24cd89a7-737f-490e-8c8e-cbeac7eac054tt.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 39,\r",
+											"        \"title\": \"Before We Were Yours\",\r",
+											"        \"author\": \"Lisa Wingate \",\r",
+											"        \"category\": \"Romance\",\r",
+											"        \"price\": 123.00,\r",
+											"        \"coverFileName\": \"15396272-e3ec-4b1c-97d0-d2e841898f55aa.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 40,\r",
+											"        \"title\": \"A Dance with Dragons\",\r",
+											"        \"author\": \"George R.R. Martin\",\r",
+											"        \"category\": \"Fantasy\",\r",
+											"        \"price\": 412.00,\r",
+											"        \"coverFileName\": \"63df0288-6589-4e4c-8a68-def0bbf72714qa.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 41,\r",
+											"        \"title\": \"The Hate U Give\",\r",
+											"        \"author\": \"Angie Thomas\",\r",
+											"        \"category\": \"Biography\",\r",
+											"        \"price\": 122.00,\r",
+											"        \"coverFileName\": \"3d894fa1-8746-4443-b244-99624cc39f1fq1we.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 42,\r",
+											"        \"title\": \"All the Light We Cannot See\",\r",
+											"        \"author\": \"Anthony Doerr \",\r",
+											"        \"category\": \"Romance\",\r",
+											"        \"price\": 542.00,\r",
+											"        \"coverFileName\": \"e49d1ff8-3bad-49fc-b1f1-496fc7fef07aq2.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 43,\r",
+											"        \"title\": \"The Help\",\r",
+											"        \"author\": \"Kathryn Stockett\",\r",
+											"        \"category\": \"Biography\",\r",
+											"        \"price\": 124.00,\r",
+											"        \"coverFileName\": \"921ff624-bcdb-4b48-8e5b-c3f34078bd11q3.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 44,\r",
+											"        \"title\": \"A Court of Mist and Fury\",\r",
+											"        \"author\": \"Sarah J. Maas \",\r",
+											"        \"category\": \"Romance\",\r",
+											"        \"price\": 645.00,\r",
+											"        \"coverFileName\": \"7996d691-beb6-4c41-82f0-4a3f23641db626073150.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 45,\r",
+											"        \"title\": \"The Martian\",\r",
+											"        \"author\": \"Andy Weir\",\r",
+											"        \"category\": \"Fantasy\",\r",
+											"        \"price\": 321.00,\r",
+											"        \"coverFileName\": \"5b7162d6-2780-461b-be6f-e4debac083ad18007564.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 46,\r",
+											"        \"title\": \"Catching Fire\",\r",
+											"        \"author\": \"Suzanne Collins\",\r",
+											"        \"category\": \"Mystery\",\r",
+											"        \"price\": 658.00,\r",
+											"        \"coverFileName\": \"6df4a30a-e8a1-467d-9da6-d826989a9c606148028.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 47,\r",
+											"        \"title\": \"The Fault in Our Stars\",\r",
+											"        \"author\": \" John Green \",\r",
+											"        \"category\": \"Mystery\",\r",
+											"        \"price\": 346.00,\r",
+											"        \"coverFileName\": \"a99a994c-b5d5-4f17-807f-33bcd1003505q3333.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 48,\r",
+											"        \"title\": \"11/22/63\",\r",
+											"        \"author\": \"Stephen King\",\r",
+											"        \"category\": \"Mystery\",\r",
+											"        \"price\": 556.00,\r",
+											"        \"coverFileName\": \"ab486162-5053-46ec-a89a-fdf2b686ff6310644930.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 72,\r",
+											"        \"title\": \"City of Girls\",\r",
+											"        \"author\": \"Elizabeth Gilbert \",\r",
+											"        \"category\": \"Fiction\",\r",
+											"        \"price\": 1222.00,\r",
+											"        \"coverFileName\": \"e94cf1e2-a7bf-47e1-aed8-b8931aeee6b342135029.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 73,\r",
+											"        \"title\": \"Mrs. Everything\",\r",
+											"        \"author\": \"Jennifer Weiner \",\r",
+											"        \"category\": \"Fiction\",\r",
+											"        \"price\": 4444.00,\r",
+											"        \"coverFileName\": \"07492ea6-09fb-46e9-8c9b-8a8f51afe989qq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 74,\r",
+											"        \"title\": \"Magic for Liars\",\r",
+											"        \"author\": \"Sarah Gailey \",\r",
+											"        \"category\": \"Fiction\",\r",
+											"        \"price\": 777.00,\r",
+											"        \"coverFileName\": \"7a904907-be5d-42c3-af15-6b770e5bd0d0qq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 75,\r",
+											"        \"title\": \"Fix Her Up\",\r",
+											"        \"author\": \"Tessa Bailey \",\r",
+											"        \"category\": \"Romance\",\r",
+											"        \"price\": 3333.00,\r",
+											"        \"coverFileName\": \"1561f3e0-c461-4273-864c-9e67c620a490qq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 76,\r",
+											"        \"title\": \"Like a Love Story\",\r",
+											"        \"author\": \"Abdi Nazemian \",\r",
+											"        \"category\": \"Romance\",\r",
+											"        \"price\": 6666.00,\r",
+											"        \"coverFileName\": \"bb4382d6-4c3f-462f-bbbe-a7f88afc1436qq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 77,\r",
+											"        \"title\": \"The Beholder\",\r",
+											"        \"author\": \"Anna Bright \",\r",
+											"        \"category\": \"Romance\",\r",
+											"        \"price\": 3333.00,\r",
+											"        \"coverFileName\": \"5ba1968d-a7f5-4a04-99c2-281088b8532fqq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 78,\r",
+											"        \"title\": \"The Last Pirate of New York: A Ghost Ship, a Killer, and the Birth of a Gangster Nation\",\r",
+											"        \"author\": \"Rich Cohen\",\r",
+											"        \"category\": \"Biography\",\r",
+											"        \"price\": 1212.00,\r",
+											"        \"coverFileName\": \"716d7202-d166-452a-b998-a17fe2666438qq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 79,\r",
+											"        \"title\": \"The Ministry of Truth: The Biography of George Orwell's \\\"1984\\\"\",\r",
+											"        \"author\": \"Dorian Lynskey\",\r",
+											"        \"category\": \"Biography\",\r",
+											"        \"price\": 5874.00,\r",
+											"        \"coverFileName\": \"0e6688cb-47e4-438c-9648-543f174878d5qq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 80,\r",
+											"        \"title\": \"Rough Magic: Riding the World's Loneliest Horse Race\",\r",
+											"        \"author\": \"Lara Prior-Palmer\",\r",
+											"        \"category\": \"Biography\",\r",
+											"        \"price\": 8264.00,\r",
+											"        \"coverFileName\": \"577f11d3-df70-4671-a468-6318da8ec16cqq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 81,\r",
+											"        \"title\": \"This Storm\",\r",
+											"        \"author\": \"James Ellroy\",\r",
+											"        \"category\": \"Mystery\",\r",
+											"        \"price\": 2232.00,\r",
+											"        \"coverFileName\": \"d810fa08-0ed8-4dcb-8158-6f1ab98a45d3qq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 83,\r",
+											"        \"title\": \"One Night at the Lake\",\r",
+											"        \"author\": \" Bethany Chase\",\r",
+											"        \"category\": \"Mystery\",\r",
+											"        \"price\": 555.00,\r",
+											"        \"coverFileName\": \"fe476d1e-cdc3-404b-913e-a52889d5b9fcqq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 84,\r",
+											"        \"title\": \"The Chosen\",\r",
+											"        \"author\": \"Taran Matharu \",\r",
+											"        \"category\": \"Fantasy\",\r",
+											"        \"price\": 5555.00,\r",
+											"        \"coverFileName\": \"ffa6e013-86ac-4d00-8516-a8fd8bc8ddf5qq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 85,\r",
+											"        \"title\": \"All of Us with Wings\",\r",
+											"        \"author\": \"Michelle Ruiz Keil \",\r",
+											"        \"category\": \"Fantasy\",\r",
+											"        \"price\": 555.00,\r",
+											"        \"coverFileName\": \"3618116f-ba09-4172-bc6a-7aa2dbe7d7c4qq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 86,\r",
+											"        \"title\": \"Soul of the Sword\",\r",
+											"        \"author\": \" Julie Kagawa\",\r",
+											"        \"category\": \"Fantasy\",\r",
+											"        \"price\": 55555.00,\r",
+											"        \"coverFileName\": \"58dbce6c-7c82-4491-be4f-c170867ba4b6qq.jpg\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"bookId\": 90,\r",
+											"        \"title\": \"7/1/1993\",\r",
+											"        \"author\": \"qwert\",\r",
+											"        \"category\": \"Fiction\",\r",
+											"        \"price\": 123.00,\r",
+											"        \"coverFileName\": \"Default_image.jpg\"\r",
+											"    }\r",
+											"]\r",
+											"\r",
+											"    pm.expect(resObjArr).to.eql(expectedResult,\"EXPECTED:\"+JSON.stringify(expectedResult)+\r",
+											"    \" ACTUAL:\"+JSON.stringify(resObjArr));\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"bookId\": 2,\r\n        \"title\": \"HP2\",\r\n        \"author\": \"JKR\",\r\n        \"category\": \"Mystery\",\r\n        \"price\": 235.00,\r\n        \"coverFileName\": \"9d8f4978-0ef8-42d0-873a-4eb583439237HP2.jpg\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/{{book_api}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{book_api}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Categories list",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"book2:test get list categories of books has status 200\", ()=> {\r",
+											"    pm.response.to.have.status(200);\r",
+											"})\r",
+											"pm.test(\"book4: test categories are correct\", ()=> {\r",
+											"    const resObjArr = pm.response.json();\r",
+											"    pm.expect(resObjArr).to.have.length(5);\r",
+											"    expectedResult = [\r",
+											"        {\r",
+											"            \"categoryId\": 1,\r",
+											"            \"categoryName\": \"Biography\"\r",
+											"        },\r",
+											"        {\r",
+											"        \"categoryId\": 2,\r",
+											"        \"categoryName\": \"Fiction\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"categoryId\": 3,\r",
+											"        \"categoryName\": \"Mystery\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"categoryId\": 4,\r",
+											"        \"categoryName\": \"Fantasy\"\r",
+											"    },\r",
+											"    {\r",
+											"        \"categoryId\": 5,\r",
+											"        \"categoryName\": \"Romance\"\r",
+											"    }\r",
+											"    ] \r",
+											"    pm.expect(resObjArr).to.eql(expectedResult,\"EXPECTED:\"+JSON.stringify(expectedResult)+\r",
+											"    \" ACTUAL:\"+JSON.stringify(resObjArr));\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/{{book_api}}/GetCategoriesList",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"{{book_api}}",
+										"GetCategoriesList"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "negativeTesting",
+					"item": [
+						{
+							"name": "Unauthorized",
+							"item": [
+								{
+									"name": "Delete book without login",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"book6: check 401 status code: delete book without login\", ()=> {\r",
+													"    pm.response.to.have.status(401);\r",
+													"})"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/{{book_api}}/2",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"{{book_api}}",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update book data without login",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"book7: check 401 status code: update book without login\", ()=> {\r",
+													"    pm.response.to.have.status(401);\r",
+													"})"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n        \"bookId\": 2,\r\n        \"title\": \"HP2\",\r\n        \"author\": \"JKR\",\r\n        \"category\": \"Fiction\",\r\n        \"price\": 235.00,\r\n        \"coverFileName\": \"9d8f4978-0ef8-42d0-873a-4eb583439237HP2.jpg\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/{{book_api}}",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"{{book_api}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add new book (unauth)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"book8: check 401 status code: add book without login\", ()=> {\r",
+													"    pm.response.to.have.status(401);\r",
+													"})"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n        \"bookId\": 91,\r\n        \"title\": \"My book\",\r\n        \"author\": \"Anatolii\",\r\n        \"category\": \"Fiction\",\r\n        \"price\": 235.00,\r\n        \"coverFileName\": \"9d8f4978-0ef8-42d0-873a-4eb583439237HP2.jpg\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/{{book_api}}",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"{{book_api}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "login_as_usual_user",
+							"item": [
+								{
+									"name": "Preconditions",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"token\",pm.response.json()['token']);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\":\"anatolii\",\r\n    \"password\":\"password1234Q\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/Login",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"Login"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete book with user",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"book9: check 403 status code: delete book forbidden for a usual user\", ()=> {\r",
+													"    pm.response.to.have.status(403);\r",
+													"})"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/{{book_api}}/2",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"{{book_api}}",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update book data with user",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"book 10: check 403 status code: update book forbidden\", ()=> {\r",
+													"    pm.response.to.have.status(403);\r",
+													"})"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n        \"bookId\": 2,\r\n        \"title\": \"HP2\",\r\n        \"author\": \"JKR\",\r\n        \"category\": \"Fiction\",\r\n        \"price\": 235.00,\r\n        \"coverFileName\": \"9d8f4978-0ef8-42d0-873a-4eb583439237HP2.jpg\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/{{book_api}}",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"{{book_api}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add new book with user",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"check 403 status code: add book forbidden for a usual user\", ()=> {\r",
+													"    pm.response.to.have.status(403);\r",
+													"})"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n        \"bookId\": 91,\r\n        \"title\": \"My book\",\r\n        \"author\": \"Anatolii\",\r\n        \"category\": \"Fiction\",\r\n        \"price\": 235.00,\r\n        \"coverFileName\": \"9d8f4978-0ef8-42d0-873a-4eb583439237HP2.jpg\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/{{book_api}}",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"{{book_api}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Shopping cart",
+			"item": [
+				{
+					"name": "positive testing",
+					"item": [
+						{
+							"name": "Preconditions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"token\",pm.response.json()['token']);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"anatolii\",\r\n    \"password\":\"password1234Q\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/Login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"Login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "clear the shopping cart with auth rights",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"cart1: check clearing cart for auth user\",()=> {\r",
+											"    pm.expect(pm.response.code).to.eql(200);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/ShoppingCart/{{test_user_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"ShoppingCart",
+										"{{test_user_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "add new item to the cart with auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"cart3: check adding to cart for auth user\",()=> {\r",
+											"    pm.expect(pm.response.code).to.eql(200);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/ShoppingCart/AddToCart/{{test_user_id}}/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"ShoppingCart",
+										"AddToCart",
+										"{{test_user_id}}",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get items of cart with auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"cart5: check ablity of getting list of items of user in cart with auth\",()=> {\r",
+											"    pm.expect(pm.response.code).to.eql(200);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/ShoppingCart/{{test_user_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"ShoppingCart",
+										"{{test_user_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete item from cart that is not present Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"cart13: test deleting cart item for a user that is in the cart\",()=> {\r",
+											"    pm.expect(pm.response.code).to.eql(200);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/ShoppingCart/{{test_user_id}}/2",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"ShoppingCart",
+										"{{test_user_id}}",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "negative testing",
+					"item": [
+						{
+							"name": "unauth",
+							"item": [
+								{
+									"name": "clear the shopping cart without auth rights",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"cart7: check clearing cart for any user by not admin user\",()=> {\r",
+													"    pm.expect(pm.response.code).to.not.eql(200);\r",
+													"})"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/api/ShoppingCart/{{test_user_id}}",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"ShoppingCart",
+												"{{test_user_id}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "add new item to the cart without auth",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"check adding to cart for any user by not admin user\",()=> {\r",
+													"    pm.expect(pm.response.code).to.not.eql(200);\r",
+													"})"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/api/ShoppingCart/AddToCart/{{test_user_id}}/2",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"ShoppingCart",
+												"AddToCart",
+												"{{test_user_id}}",
+												"2"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "get items of cart without auth",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"сart11: check disablity of getting list of items of user in cart without auth\",()=> {\r",
+													"    pm.expect(pm.response.code).to.not.eql(200);\r",
+													"})"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/api/ShoppingCart/{{test_user_id}}",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"ShoppingCart",
+												"{{test_user_id}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "auth",
+							"item": [
+								{
+									"name": "Preconditions",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.environment.set(\"token\",pm.response.json()['token']);"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\":\"anatolii\",\r\n    \"password\":\"password1234Q\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{base_url}}/api/Login",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"Login"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "delete item from cart that is not present",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"cart12: test deleting cart item for a user that is not in the cart\",()=> {\r",
+													"    pm.expect(pm.response.code).to.not.eql(200);\r",
+													"})"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{base_url}}/api/ShoppingCart/{{test_user_id}}/3",
+											"host": [
+												"{{base_url}}"
+											],
+											"path": [
+												"api",
+												"ShoppingCart",
+												"{{test_user_id}}",
+												"3"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "positive testing",
+					"item": [
+						{
+							"name": "check successfull login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"user1: check succesfull login\",()=> {\r",
+											"    pm.response.to.have.status(200);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"tolik1234\",\r\n    \"password\":\"password1234ER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/Login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"Login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check unavailabiltiy of user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"user4: check unavailable user\",()=> {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.expect(pm.response.json()).to.eql(false);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/User/validateUserName/oleg1234",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"User",
+										"validateUserName",
+										"oleg1234"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Check available user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"user3: check available user\",()=> {\r",
+											"    pm.response.to.have.status(200);\r",
+											"    pm.expect(pm.response.json()).to.eql(true);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/api/User/validateUserName/anatolii",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"User",
+										"validateUserName",
+										"anatolii"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "negative",
+					"item": [
+						{
+							"name": "post an existing user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"user5: check status code is not 200 for existing user\",()=> {\r",
+											"    pm.expect(pm.response.code).to.not.eql(200);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"userId\": 0,\r\n  \"firstName\": \"anatolii\",\r\n  \"lastName\": \"vasylenko\",\r\n  \"username\": \"tolik1234\",\r\n  \"password\": \"easypass1234\",\r\n  \"gender\": \"Male\",\r\n  \"userTypeId\": 0\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/User",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"User"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "check unsccessful login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"user2: check unsuccesfull login\",()=> {\r",
+											"    pm.response.to.not.have.status(200);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"tolik1234\",\r\n    \"password\":\"password1234ERtyu\"\r\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/api/Login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"Login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Checkout",
+					"item": [
+						{
+							"name": "Preconditions",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"token\",pm.response.json()['token']);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"anatolii\",\r\n    \"password\":\"password1234Q\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/Login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"Login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "checkout_auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"order1: order for auth user\",()=> {\r",
+											"     pm.response.to.have.status(200);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"orderId\": \"someorder\",\r\n  \"orderDetails\": [\r\n\r\n    {\r\n      \"book\": {\r\n        \"bookId\": 2,\r\n        \"title\": \"HP2\",\r\n        \"author\": \"JKR\",\r\n        \"category\": \"Mystery\",\r\n        \"price\": 235.00,\r\n        \"coverFileName\": \"9d8f4978-0ef8-42d0-873a-4eb583439237HP2.jpg\"\r\n      },\r\n      \"quantity\": 1\r\n    }\r\n  ],\r\n  \"cartTotal\": 235.00,\r\n  \"orderDate\": \"2023-12-15T10:46:40.523Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/CheckOut/{{test_user_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"CheckOut",
+										"{{test_user_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "checkout_auth_another_user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"order3: order for auth user (another)\",()=> {\r",
+											"     pm.response.to.have.status(403);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"orderId\": \"someorder\",\r\n  \"orderDetails\": [\r\n\r\n    {\r\n      \"book\": {\r\n        \"bookId\": 2,\r\n        \"title\": \"HP2\",\r\n        \"author\": \"JKR\",\r\n        \"category\": \"Mystery\",\r\n        \"price\": 235.00,\r\n        \"coverFileName\": \"9d8f4978-0ef8-42d0-873a-4eb583439237HP2.jpg\"\r\n      },\r\n      \"quantity\": 1\r\n    }\r\n  ],\r\n  \"cartTotal\": 235.00,\r\n  \"orderDate\": \"2023-12-15T10:46:40.523Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/CheckOut/23100",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"CheckOut",
+										"23100"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "checkout_un_auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"order2: order for not auth user\",()=> {\r",
+											"     pm.response.to.have.status(401);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"orderId\": \"someorder\",\r\n  \"orderDetails\": [\r\n\r\n    {\r\n      \"book\": {\r\n        \"bookId\": 2,\r\n        \"title\": \"HP2\",\r\n        \"author\": \"JKR\",\r\n        \"category\": \"Mystery\",\r\n        \"price\": 235.00,\r\n        \"coverFileName\": \"9d8f4978-0ef8-42d0-873a-4eb583439237HP2.jpg\"\r\n      },\r\n      \"quantity\": 1\r\n    }\r\n  ],\r\n  \"cartTotal\": 235.00,\r\n  \"orderDate\": \"2023-12-15T10:46:40.523Z\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/CheckOut/{{test_user_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"CheckOut",
+										"{{test_user_id}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "OrderList",
+					"item": [
+						{
+							"name": "Preconditions Copy",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.environment.set(\"token\",pm.response.json()['token']);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\":\"anatolii\",\r\n    \"password\":\"password1234Q\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/Login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"Login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get orders anauth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"order4: get order for not auth user\",()=> {\r",
+											"     pm.response.to.have.status(401);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/Order/{{test_user_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"Order",
+										"{{test_user_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get orders auth",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"order5: get order for auth user\",()=> {\r",
+											"     pm.response.to.have.status(200);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/Order/{{test_user_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"Order",
+										"{{test_user_id}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get orders other user",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"order6: get order for auth user other\",()=> {\r",
+											"     pm.response.to.have.status(403);\r",
+											"})"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/Order/23010",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"Order",
+										"23010"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://bookcart.azurewebsites.net/",
+			"type": "string"
+		},
+		{
+			"key": "book_api",
+			"value": "api/Book",
+			"type": "string"
+		},
+		{
+			"key": "test_user_id",
+			"value": "23018",
+			"type": "string"
+		}
+	]
+}
