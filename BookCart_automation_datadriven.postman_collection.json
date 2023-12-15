@@ -95,5 +95,42 @@
 				}
 			]
 		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://bookcart.azurewebsites.net/",
+			"type": "string"
+		},
+		{
+			"key": "book_api",
+			"value": "api/Book",
+			"type": "string"
+		},
+		{
+			"key": "test_user_id",
+			"value": "23018",
+			"type": "string"
+		}
 	]
 }
